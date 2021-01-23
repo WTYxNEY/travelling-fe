@@ -1,0 +1,28 @@
+.blog-button {
+    display: flex;
+    justify-content: flex-end;
+}
+.blog-button a{
+    margin: 0 10px;
+}
+.blog-button button[name="edit"]{
+    background-color:#228B22; 
+    color: white; 
+}
+.blog-button button[name="delete"]{
+    background-color:#FF0000; 
+    color: white; 
+}
+.card-body {
+    height: 260px;
+}
+@media only screen and (max-width: 1163px) {
+    .card-body {
+        height: 280px;
+    }
+}
+@media only screen and (max-width: 775px) {
+    .card-body {
+        height: 280px;
+    }
+}

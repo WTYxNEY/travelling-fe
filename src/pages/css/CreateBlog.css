@@ -1,0 +1,160 @@
+.create {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+}
+
+.create-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 85%;
+}
+
+.create-box-content {
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    width: 90%;
+    height: 90%;
+}
+
+.create-box-content-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.create-box-content-item input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.create-box-content-item textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+    height: 300px;
+}
+.create-box-content-item button{
+    width: 100%;
+    display: inline-block;
+    margin: 8px 0;
+    padding: 10px 20px;
+}
+
+.create-box-content-item input:focus{
+    background-color:#E6E6FA;
+}
+.create-box-content-item textarea:focus{
+    background-color:#E6E6FA;
+}
+
+.create-box-content-item input[type="file"] {
+    background: white;
+}
+
+/* efewf */
+.create-box-content-item select{
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.create-box-content-item select:focus{
+    background-color:#E6E6FA;
+}
+
+.create-box-content-item option{
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+.create-box-content-item-btn {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.create-box-content-item button[name="save"]{
+    margin: 0 20px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color:#90EE90; 
+    color: black; 
+    margin-bottom: 20px;
+}
+
+
+.create-box-content-item button[name="save"]:hover{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.create-box-content-item button[name="clear"]{
+    margin: 0 20px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color:#F08080; 
+    color: black; 
+    margin-bottom: 20px;
+}
+
+.create-box-content-item button[name="clear"]:hover{
+    background-color: #DC143C;
+    color: white;
+}
+
+@media only screen and (max-width: 480px) {
+    .create-box-content-item {
+        font-size: small;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .create-box-content-item {
+        font-size: medium;
+    }
+}
+@media only screen and (max-width: 399px) {
+    .create-box-content-item {
+        font-size: small;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .create-box-content-item {
+        font-size: small;
+    }
+}
+@media only screen and (max-width: 281px) {
+    .create-box-content-item {
+        font-size: small;
+    }
+    .create-box-content-item input[type="file"] {
+        background: white;
+        font-size: 8px;
+    }
+}
