@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './css/Blog.css'
 import CardItem from '../Components/CardItem'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { CircularProgress } from '@material-ui/core'
 import BlogService from '../Services/BlogService';
 
 export default function Blog() {
@@ -15,11 +15,16 @@ export default function Blog() {
         dispatch(BlogService.getBlog());
     }, [dispatch]);
 
+    console.log(blog)
 
     return (
         <>
             {!blog ? "Loading..." : (
-                blog.blogs && (
+                !blog.blogs ?
+                    <div className="circular-progresss">
+                        <CircularProgress />
+                    </div>
+                    :
                     <div className="blog-container">
 
                         {/* Blog Heading */}
@@ -58,7 +63,6 @@ export default function Blog() {
 
                         </div>
                     </div>
-                )
             )
             }
         </>

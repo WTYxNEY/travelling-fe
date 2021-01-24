@@ -8,6 +8,15 @@
     
 }
 
+/* Loading */
+
+.circular-progresss {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
 /* heading */
 .blog-heading {
     display: flex;

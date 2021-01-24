@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import BlogService from '../Services/BlogService';
 import FileBase from 'react-file-base64'
 import { AuthContext } from '../Context/AuthContext';
+import SuccesSweetAlert from '../Components/SuccesSweetAlert'
 
 function EditBlog(props) {
     let timerID = useRef(null);
@@ -47,8 +48,10 @@ function EditBlog(props) {
         e.preventDefault();
         dispatch(BlogService.editBlog(blog, blogId))
         clear()
+        SuccesSweetAlert("Create success")
         timerID = setTimeout(() => {
             props.history.push(`/blogs/${user._id}`);
+            window.location.reload()
         }, 2000)
 
     }

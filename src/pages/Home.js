@@ -1,6 +1,7 @@
 import React, { useEffect,useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { RiFacebookCircleFill, RiInstagramLine, RiPhoneFill, RiMailLine } from 'react-icons/ri'
+import { CircularProgress } from '@material-ui/core'
 import './css/Home.css'
 import CardItem from '../Components/CardItem'
 import { useDispatch, useSelector } from 'react-redux'
@@ -18,7 +19,12 @@ export default function Home() {
 
     return (
         <div>
-            {!blogs ? "Loading..." : (
+            {!blogs ? 
+            <div className="container">
+                <CircularProgress/>
+            </div>
+            
+            : (
 
                 <div className="home-container">
                     {/* Home Heading */}
@@ -39,7 +45,7 @@ export default function Home() {
                             <div className="home-content-cards-grid">
 
                                 {
-                                    blogs.filter((blogs) => blogs.country === "Thailand").length === 0 ? "We have no any blog about Thailand" :
+                                    blogs.filter((blogs) => blogs.country === "Thailand").length === 0 ? <CircularProgress /> :
                                         blogs.filter((blogs) => blogs.country === "Thailand").slice(0, 3).map((blog) => {
                                             return <div className="home-content-card-item">
                                                 <CardItem key={blog._id} blog={blog} />
@@ -70,7 +76,7 @@ export default function Home() {
                             <div className="home-content-cards-grid">
 
                                 {
-                                    blogs.filter((blogs) => blogs.country !== "Thailand").length === 0 ? "We have no any blog about Foreign country" :
+                                    blogs.filter((blogs) => blogs.country !== "Thailand").length === 0 ? <CircularProgress /> :
                                         blogs.filter((blogs) => blogs.country !== "Thailand").slice(0, 3).map((blog) => {
                                             return <div className="home-content-card-item">
                                                 <CardItem key={blog._id} blog={blog} />

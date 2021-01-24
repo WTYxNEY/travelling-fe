@@ -54,7 +54,8 @@ function CreateBlog(props) {
             SuccesSweetAlert("Create success")
             timerID = setTimeout(() => {
                 props.history.push(`/blogs/${user._id}`);
-            }, 1000)
+                window.location.reload()
+            }, 2000)
         } else {
             ErrorSweetAlert("Please Checking Your Input")
         }

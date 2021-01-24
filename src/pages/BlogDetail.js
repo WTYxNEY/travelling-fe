@@ -5,9 +5,10 @@ import dayjs from 'dayjs'
 import './css/BlogDetail.css'
 import BlogService from '../Services/BlogService';
 import { Link } from 'react-router-dom'
+import { CircularProgress } from '@material-ui/core'
 
 function BlogDetail() {
-    const {  blogId } = useParams()
+    const { blogId } = useParams()
 
     const blogDetail = useSelector(state => state.blogDetail)
     const dispatch = useDispatch();
@@ -19,26 +20,30 @@ function BlogDetail() {
 
     return (
         <>
-            {blogDetail && (
-                <div className="container">
-                    <div className="bd-content">
-                        <h1>{blogDetail.title}</h1>
-                        <div className="img-detail">
-                        <img src={blogDetail.selectedFile} alt="Blog Image" />
-                        </div>
-                        <h3>&emsp;{blogDetail.content}</h3>
-                        <p>Location: {blogDetail.country}</p>
-                        <p>Create At: {dayjs(blogDetail.createDate).format('DD/MM/YYYY')}</p>
-                        <>
-                            <Link to='/'>
-                                <div className="bd-content-button">
-                                    <button >Back</button>
-                                </div>
-                            </Link>
-                        </>
-                    </div>
+            {!blogDetail._id ?
+                <div className="circular-progresss">
+                    <CircularProgress />
                 </div>
-            )}
+                :
+                    <div className="container">
+                        <div className="bd-content">
+                            <h1>{blogDetail.title}</h1>
+                            <div className="img-detail">
+                                <img src={blogDetail.selectedFile} alt="Blog Image" />
+                            </div>
+                            <h3>&emsp;{blogDetail.content}</h3>
+                            <p>Location: {blogDetail.country}</p>
+                            <p>Create At: {dayjs(blogDetail.createDate).format('DD/MM/YYYY')}</p>
+                            <>
+                                <Link to='/'>
+                                    <div className="bd-content-button">
+                                        <button >Back</button>
+                                    </div>
+                                </Link>
+                            </>
+                        </div>
+                    </div>
+            }
 
         </>
 

@@ -1,3 +1,10 @@
+.circular-progresss {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
 .bd-content h1{
     margin: 20px 0;
     display: flex;

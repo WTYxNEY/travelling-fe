@@ -6,7 +6,6 @@ import Swal from 'sweetalert2'
         <>
             {
                 Swal.fire({
-                    position: 'top-end',
                     icon: 'success',
                     title: `Delete successfully`,
                     showConfirmButton: false,
